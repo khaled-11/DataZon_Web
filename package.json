@@ -4,7 +4,8 @@
   "description": "Node.js Web App to embed AWS QuickSight using Credential & Paid Sessions",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

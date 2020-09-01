@@ -56,7 +56,6 @@ var quicksight = new aws.Service({
 
 app.get(`/covid`, async function(request, response) {
     //COVID Dashboard
-    console.log(request.session)
     if (request.session.loggedin) {
     quicksight.getDashboardEmbedUrl({
         'AwsAccountId': '055146946590', 
@@ -79,6 +78,7 @@ app.get(`/covid`, async function(request, response) {
 
 app.get(`/irs`, async function(request, response) {
     //IRS Dashboard
+    if (request.session.loggedin) {
     quicksight.getDashboardEmbedUrl({
         'AwsAccountId': '055146946590', 
         'DashboardId': '803121bd-2bb2-4d2c-9c70-57b5aeb8e2d7',
@@ -92,7 +92,10 @@ app.get(`/irs`, async function(request, response) {
             console.log(data);
             response.render("IRS", {ur:data.EmbedUrl});
         }
-    })
+    })}
+    else {
+        response.render("login");
+    }
 });
 
 // aws quicksight register-user --aws-account-id 055146946590 --identity-type QUICKSIGHT --email khaleabousseada@iclfdoud.com --namespace default --user-role READER --user-name Kha
