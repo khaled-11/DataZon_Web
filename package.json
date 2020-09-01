@@ -1,0 +1,36 @@
+{
+  "name": "datazon_web",
+  "version": "1.0.0",
+  "description": "Node.js Web App to embed AWS QuickSight using Credential & Paid Sessions",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khaled-11/DataZon_Web.git"
+  },
+  "keywords": [
+    "AWS",
+    "Amazon-pay",
+    "Node.js",
+    "AWS_QuickSight",
+    "AWS-SDK"
+  ],
+  "author": "Khaled Abouseada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khaled-11/DataZon_Web/issues"
+  },
+  "homepage": "https://github.com/khaled-11/DataZon_Web#readme",
+  "dependencies": {
+    "aws-sdk": "^2.743.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "https": "^1.0.0",
+    "md5": "^2.3.0",
+    "path": "^0.12.7"
+  }
+}

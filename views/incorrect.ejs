@@ -1,0 +1,19 @@
+<%- include("header") -%>
+
+<title>DataZon Login</title>
+
+<h1>The User/Password is not correct!</h1>
+<br>
+<div class="register-form">
+    <h1>Try Again</h1>
+    <form action="auth" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+    <br>
+    <center>
+        <p>You can use the credential: user name: test & password: 123456</p>
+    </center>
+</div>
+<%- include("footer") -%>

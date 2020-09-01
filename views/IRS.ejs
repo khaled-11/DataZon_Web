@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DataZon | IRS Data Graphs</title>
+    <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.9/dist/quicksight-embedding-js-sdk.min.js"></script>
+    <script type="text/javascript">
+        var dashboard
+        function onDashboardLoad(payload) {
+            console.log("Do something when the dashboard is fully loaded.");
+        }
+
+        function onError(payload) {
+            console.log("Do something when the dashboard fails loading");
+        }
+
+        function embedDashboard(ur) {
+            var containerDiv = document.getElementById("embeddingContainer");
+            var options = {
+                url: ur,
+                container: containerDiv,
+                scrolling: "no",
+                height: "1400px",
+                width: "1500px",
+                locale: "en-US",
+                footerPaddingEnabled: true
+            };
+            dashboard = QuickSightEmbedding.embedDashboard(options);
+            dashboard.on("error", onError);
+            dashboard.on("load", onDashboardLoad);
+        }
+
+    </script>
+</head>
+
+<body onload="embedDashboard('<%=ur%>')">
+
+    <div id="embeddingContainer"></div>
+</body>
+
+</html>
